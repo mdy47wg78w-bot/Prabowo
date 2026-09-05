@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#000000"
+    >
+
+    <title>DarkSpy V4</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">◈</div>
+
+            <div>
+                <h1>DarkSpy</h1>
+                <span>V4 MONITOR</span>
+            </div>
+        </div>
+
+        <div class="side-status">
+            <span
+                id="statusDot"
+                class="status-dot"
+            ></span>
+
+            <span id="sideStatus">
+                STOPPED
+            </span>
+        </div>
+
+        <nav>
+
+            <button
+                class="nav active"
+                data-page="dashboard"
+            >
+                <span>⌂</span>
+                Dashboard
+            </button>
+
+            <button
+                class="nav"
+                data-page="device"
+            >
+                <span>▣</span>
+                Device
+            </button>
+
+            <button
+                class="nav"
+                data-page="battery"
+            >
+                <span>▰</span>
+                Battery
+            </button>
+
+            <button
+                class="nav"
+                data-page="network"
+            >
+                <span>⌁</span>
+                Network
+            </button>
+
+            <button
+                class="nav"
+                data-page="storage"
+            >
+                <span>▤</span>
+                Storage
+            </button>
+
+            <button
+                class="nav"
+                data-page="location"
+            >
+                <span>⌖</span>
+                Location
+            </button>
+
+            <button
+                class="nav"
+                data-page="camera"
+            >
+                <span>▣</span>
+                Camera
+            </button>
+
+            <button
+                class="nav"
+                data-page="permissions"
+            >
+                <span>◇</span>
+                Permissions
+            </button>
+
+            <button
+                class="nav"
+                data-page="activity"
+            >
+                <span>≡</span>
+                Activity
+            </button>
+
+            <button
+                class="nav"
+                data-page="settings"
+            >
+                <span>⚙</span>
+                Settings
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <span>SAFE LOCAL MONITOR</span>
+            <small>V4.0</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <div class="eyebrow">
+                    DARKSPY SYSTEM
+                </div>
+
+                <h2 id="pageTitle">
+                    Dashboard
+                </h2>
+            </div>
+
+            <div class="top-actions">
+
+                <div
+                    id="clock"
+                    class="clock"
+                >
+                    00:00:00
+                </div>
+
+                <button
+                    id="masterBtn"
+                    class="btn primary"
+                >
+                    START MONITORING
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= DASHBOARD ================= -->
+
+        <section
+            id="dashboard"
+            class="page active"
+        >
+
+            <div class="hero">
+
+                <div>
+
+                    <div class="hero-label">
+                        LOCAL DEVICE TELEMETRY
+                    </div>
+
+                    <h3>
+                        Dark
+                        <span>Monitoring</span>
+                        Console
+                    </h3>
+
+                    <p>
+                        Dashboard pemantauan perangkat
+                        berbasis browser dengan kontrol
+                        izin yang terlihat.
+                    </p>
+
+                </div>
+
+                <div class="hero-status">
+
+                    <span
+                        id="heroStatus"
+                        class="hero-status-text"
+                    >
+                        SYSTEM IDLE
+                    </span>
+
+                    <div class="radar">
+                        <div class="radar-line"></div>
+                        <div class="radar-dot"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATUS CARDS -->
+
+            <div class="grid four">
+
+                <div class="card stat-card">
+
+                    <span class="card-label">
+                        MONITOR
+                    </span>
+
+                    <strong id="dashMonitor">
+                        STOPPED
+                    </strong>
+
+                    <small id="dashMonitorSub">
+                        Waiting
+                    </small>
+
+                </div>
+
+
+                <div class="card stat-card">
+
+                    <span class="card-label">
+                        BATTERY
+                    </span>
+
+                    <strong id="dashBattery">
+                        N/A
+                    </strong>
+
+                    <small id="dashCharging">
+                        UNKNOWN
+                    </small>
+
+                </div>
+
+
+                <div class="card stat-card">
+
+                    <span class="card-label">
+                        NETWORK
+                    </span>
+
+                    <strong id="dashNetwork">
+                        UNKNOWN
+                    </strong>
+
+                    <small id="dashNetworkType">
+                        UNKNOWN
+                    </small>
+
+                </div>
+
+
+                <div class="card stat-card">
+
+                    <span class="card-label">
+                        UPTIME
+                    </span>
+
+                    <strong id="dashUptime">
+                        00:00:00
+                    </strong>
+
+                    <small>
+                        Session
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEVICE SUMMARY -->
+
+            <div class="section-title">
+                <div>
+                    <span>01</span>
+                    DEVICE SUMMARY
+                </div>
+            </div>
+
+            <div class="grid six">
+
+                <div class="card mini-card">
+                    <span>Platform</span>
+                    <strong id="sumPlatform">
+                        -
+                    </strong>
+                </div>
+
+                <div class="card mini-card">
+                    <span>Browser</span>
+                    <strong id="sumBrowser">
+                        -
+                    </strong>
+                </div>
+
+                <div class="card mini-card">
+                    <span>Screen</span>
+                    <strong id="sumScreen">
+                        -
+                    </strong>
+                </div>
+
+                <div class="card mini-card">
+                    <span>CPU</span>
+                    <strong id="sumCPU">
+                        -
+                    </strong>
+                </div>
+
+                <div class="card mini-card">
+                    <span>Language</span>
+                    <strong id="sumLanguage">
+                        -
+                    </strong>
+                </div>
+
+                <div class="card mini-card">
+                    <span>Timezone</span>
+                    <strong id="sumTimezone">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <!-- ACTIVITY -->
+
+            <div class="section-title">
+                <div>
+                    <span>02</span>
+                    RECENT ACTIVITY
+                </div>
+
+                <button
+                    class="text-btn"
+                    onclick="showPage('activity')"
+                >
+                    VIEW ALL
+                </button>
+            </div>
+
+            <div
+                id="miniLog"
+                class="mini-log"
+            >
+                <div class="miniItem">
+                    Belum ada event.
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ================= DEVICE ================= -->
+
+        <section
+            id="device"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>DEVICE</span>
+                <h3>Informasi Perangkat</h3>
+            </div>
+
+            <div class="grid two">
+
+                <div class="card info-card">
+
+                    <div class="card-title">
+                        SYSTEM
+                    </div>
+
+                    <div class="info-row">
+                        <span>Platform</span>
+                        <strong id="devicePlatform">-</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Browser</span>
+                        <strong id="deviceBrowser">-</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>CPU Cores</span>
+                        <strong id="deviceCPU">-</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Memory</span>
+                        <strong id="deviceMemory">-</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Language</span>
+                        <strong id="deviceLanguage">-</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Timezone</span>
+                        <strong id="deviceTimezone">-</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="card info-card">
+
+                    <div class="card-title">
+                        DISPLAY
+                    </div>
+
+                    <div class="info-row">
+                        <span>Screen</span>
+                        <strong id="deviceScreen">-</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Pixel Ratio</span>
+                        <strong id="pixelRatio">-</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Orientation</span>
+                        <strong id="deviceOrientation">-</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="card ua-card">
+
+                <div class="card-title">
+                    USER AGENT
+                </div>
+
+                <code id="deviceUA">
+                    -
+                </code>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BATTERY ================= -->
+
+        <section
+            id="battery"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>BATTERY</span>
+                <h3>Status Baterai</h3>
+            </div>
+
+            <div class="grid two">
+
+                <div class="card battery-card">
+
+                    <div class="battery-big">
+                        <strong id="batteryBig">
+                            N/A
+                        </strong>
+
+                        <span>
+                            CURRENT LEVEL
+                        </span>
+                    </div>
+
+                    <div class="battery-bar">
+                        <div
+                            id="batteryFill"
+                            class="battery-fill"
+                        ></div>
+                    </div>
+
+                    <div class="battery-state">
+                        <span>State</span>
+                        <strong id="batteryState">
+                            Unknown
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="card info-card">
+
+                    <div class="card-title">
+                        BATTERY INFO
+                    </div>
+
+                    <div class="info-row">
+                        <span>Level</span>
+                        <strong id="batteryLevel">
+                            N/A
+                        </strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Charge Time</span>
+                        <strong id="chargeTime">
+                            N/A
+                        </strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Discharge Time</span>
+                        <strong id="dischargeTime">
+                            N/A
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NETWORK ================= -->
+
+        <section
+            id="network"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>NETWORK</span>
+                <h3>Status Jaringan</h3>
+            </div>
+
+            <div class="grid three">
+
+                <div class="card stat-card">
+                    <span class="card-label">
+                        STATUS
+                    </span>
+
+                    <strong id="networkStatus">
+                        UNKNOWN
+                    </strong>
+                </div>
+
+                <div class="card stat-card">
+                    <span class="card-label">
+                        TYPE
+                    </span>
+
+                    <strong id="networkType">
+                        N/A
+                    </strong>
+                </div>
+
+                <div class="card stat-card">
+                    <span class="card-label">
+                        EFFECTIVE
+                    </span>
+
+                    <strong id="networkEffective">
+                        N/A
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="card info-card">
+
+                <div class="card-title">
+                    CONNECTION DETAILS
+                </div>
+
+                <div class="info-row">
+                    <span>Online</span>
+                    <strong id="netOnline">-</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Downlink</span>
+                    <strong id="networkDownlink">-</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>RTT</span>
+                    <strong id="netRTT">-</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Save Data</span>
+                    <strong id="netSaveData">-</strong>
+                </div>
+
+                <div class="info-row">
+                    <span>Download Estimate</span>
+                    <strong id="netDown">-</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= STORAGE ================= -->
+
+        <section
+            id="storage"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>STORAGE</span>
+                <h3>Penyimpanan Browser</h3>
+            </div>
+
+            <div class="card storage-main">
+
+                <div class="storage-percent">
+                    <strong id="storagePercent">
+                        N/A
+                    </strong>
+
+                    <span>
+                        USED
+                    </span>
+                </div>
+
+                <div class="storage-track">
+                    <div
+                        class="storage-fill"
+                        id="storageBar"
+                    ></div>
+                </div>
+
+            </div>
+
+
+            <div class="grid three">
+
+                <div class="card mini-card">
+                    <span>Used</span>
+                    <strong id="storageUsed">
+                        N/A
+                    </strong>
+                </div>
+
+                <div class="card mini-card">
+                    <span>Quota</span>
+                    <strong id="storageQuota">
+                        N/A
+                    </strong>
+                </div>
+
+                <div class="card mini-card">
+                    <span>Available</span>
+                    <strong id="storageAvailable">
+                        N/A
+                    </strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LOCATION ================= -->
+
+        <section
+            id="location"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>LOCATION</span>
+                <h3>Lokasi Perangkat</h3>
+            </div>
+
+            <div class="notice">
+                <strong>IZIN DIPERLUKAN</strong>
+                <p>
+                    Lokasi hanya diminta setelah tombol
+                    START LOCATION ditekan.
+                </p>
+            </div>
+
+            <div class="grid two">
+
+                <div class="card location-card">
+
+                    <div class="location-grid">
+
+                        <div>
+                            <span>LATITUDE</span>
+                            <strong id="latitude">
+                                -
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>LONGITUDE</span>
+                            <strong id="longitude">
+                                -
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>ACCURACY</span>
+                            <strong id="locationAccuracy">
+                                -
+                            </strong>
+                        </div>
+
+                        <div>
+                            <span>UPDATED</span>
+                            <strong id="locationTime">
+                                -
+                            </strong>
+                        </div>
+
+                    </div>
+
+                    <div class="button-row">
+
+                        <button
+                            id="locationStart"
+                            class="btn primary"
+                        >
+                            START LOCATION
+                        </button>
+
+                        <button
+                            id="locationStop"
+                            class="btn danger"
+                        >
+                            STOP LOCATION
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card permission-card">
+
+                    <div class="card-title">
+                        LOCATION STATUS
+                    </div>
+
+                    <div class="permission-state">
+                        <span>
+                            Browser Permission
+                        </span>
+
+                        <strong
+                            id="permissionLocation"
+                        >
+                            UNKNOWN
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CAMERA ================= -->
+
+        <section
+            id="camera"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>CAMERA</span>
+                <h3>Camera Preview</h3>
+            </div>
+
+            <div class="notice">
+                <strong>PRIVATE LOCAL PREVIEW</strong>
+                <p>
+                    Kamera tidak aktif sampai tombol
+                    START CAMERA ditekan dan izin diberikan.
+                    Video hanya ditampilkan di halaman ini.
+                </p>
+            </div>
+
+            <div class="camera-panel">
+
+                <div class="camera-screen">
+
+                    <video
+                        id="cameraVideo"
+                        autoplay
+                        playsinline
+                        muted
+                    ></video>
+
+                    <div class="camera-overlay">
+
+                        <span>
+                            LOCAL PREVIEW
+                        </span>
+
+                        <span
+                            id="cameraState"
+                        >
+                            CAMERA OFF
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="button-row">
+
+                    <button
+                        id="cameraStart"
+                        class="btn primary"
+                    >
+                        START CAMERA
+                    </button>
+
+                    <button
+                        id="cameraStop"
+                        class="btn danger"
+                    >
+                        STOP CAMERA
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PERMISSIONS ================= -->
+
+        <section
+            id="permissions"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>PERMISSIONS</span>
+                <h3>Permission Center</h3>
+            </div>
+
+            <div class="permission-list">
+
+                <div class="card permission-card">
+
+                    <div>
+                        <strong>
+                            Location
+                        </strong>
+
+                        <small>
+                            Geolocation browser
+                        </small>
+                    </div>
+
+                    <span
+                        id="permissionLocation"
+                    >
+                        UNKNOWN
+                    </span>
+
+                </div>
+
+
+                <div class="card permission-card">
+
+                    <div>
+                        <strong>
+                            Camera
+                        </strong>
+
+                        <small>
+                            Camera browser
+                        </small>
+                    </div>
+
+                    <span
+                        id="permissionCamera"
+                    >
+                        UNKNOWN
+                    </span>
+
+                </div>
+
+
+                <div class="card permission-card">
+
+                    <div>
+                        <strong>
+                            Notifications
+                        </strong>
+
+                        <small>
+                            Browser notifications
+                        </small>
+                    </div>
+
+                    <span
+                        id="permissionNotification"
+                    >
+                        UNKNOWN
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ACTIVITY ================= -->
+
+        <section
+            id="activity"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>ACTIVITY</span>
+                <h3>Activity Log</h3>
+            </div>
+
+            <div class="button-row">
+
+                <button
+                    id="exportLog"
+                    class="btn primary"
+                >
+                    EXPORT JSON
+                </button>
+
+                <button
+                    id="clearLog"
+                    class="btn danger"
+                >
+                    CLEAR LOG
+                </button>
+
+            </div>
+
+            <div
+                id="activityLog"
+                class="activity-log"
+            ></div>
+
+        </section>
+
+
+        <!-- ================= SETTINGS ================= -->
+
+        <section
+            id="settings"
+            class="page"
+        >
+
+            <div class="page-heading">
+                <span>SETTINGS</span>
+                <h3>System Settings</h3>
+            </div>
+
+
+            <div class="settings-list">
+
+                <div class="card setting-row">
+
+                    <div>
+                        <strong>
+                            Auto Refresh
+                        </strong>
+
+                        <small>
+                            Update telemetry otomatis
+                        </small>
+                    </div>
+
+                    <label class="switch">
+                        <input
+                            type="checkbox"
+                            id="autoRefresh"
+                            checked
+                        >
+
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="card setting-row">
+
+                    <div>
+                        <strong>
+                            Activity Logging
+                        </strong>
+
+                        <small>
+                            Simpan aktivitas selama sesi
+                        </small>
+                    </div>
+
+                    <label class="switch">
+                        <input
+                            type="checkbox"
+                            id="logging"
+                            checked
+                        >
+
+                        <span></span>
+                    </label>
+
+                </div>
+
+
+                <div class="card setting-row">
+
+                    <div>
+                        <strong>
+                            Reset Session
+                        </strong>
+
+                        <small>
+                            Hentikan monitoring dan bersihkan log
+                        </small>
+                    </div>
+
+                    <button
+                        id="resetBtn"
+                        class="btn danger"
+                    >
+                        RESET
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    id="toast"
+    class="toast"
+>
+    -
+</div>
+
+
+<!-- JAVASCRIPT -->
+
+<script src="device.js"></script>
+<script src="battery.js"></script>
+<script src="network.js"></script>
+<script src="storage.js"></script>
+<script src="location.js"></script>
+<script src="camera.js"></script>
+<script src="permissions.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
